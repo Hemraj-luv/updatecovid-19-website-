@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" type="image/png" href="{% static 'subject/images/favicon.png' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{ title }}</title>
+
+</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous">
+
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
+
+        <img src="{% static 'subject/images/corona.jpg' %}" alt="iamge" style="border-radius: 100%"
+             height="40px" width="40px">
+        <pre style="color: white"> <sub>Corona Update</sub> </pre>
+        <div class="spinner-border text-muted">
+            <pre style="color:white;"> C</pre>
+        </div>
+        <div class="spinner-border text-primary">
+            <pre style="color:white;"> O</pre>
+        </div>
+        <div class="spinner-border text-success">
+            <pre style="color:white;"> R</pre>
+        </div>
+        <div class="spinner-border text-info">
+            <pre style="color:white;"> O</pre>
+        </div>
+        <div class="spinner-border text-warning">
+            <pre style="color:white;"> N</pre>
+        </div>
+        <div class="spinner-border text-danger">
+            <pre style="color:white;"> A</pre>
+        </div>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon " style="color: white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url "worldwide" %}">CountryWise<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'in_state' %}">Statewise</a>
+                </li>
+
+                <li class="nav-item active ">
+                    <a class="nav-link" href="{% url "contact" %}">Contact</a>
+                </li>
+            </ul>
+
+
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <p class="cstm-social">
+                <a href='https://chat.whatsapp.com/Df72286nv2PEJaSeRWd7Gx' class="fa fa-whatsapp">
+
+                </a>&nbsp;
+                <a href="https://www.facebook.com/hemraj.lohkna.5" class="fa fa-facebook"></a> &nbsp
+                <a href="https://twitter.com/Hemrajluv1" class="fa fa-twitter"></a> &nbsp
+                <a href="https://www.instagram.com/hemraj__luv" class="fa fa-instagram"></a> &nbsp
+                <a href="https://www.linkedin.com/in/hemraj-luv-3rd-571726184" class="fa fa-linkedin"></a> &nbsp
+
+            </p>
+
+
+        </div>
+    </nav>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+{% block content %}
+
+{% endblock content %}
+

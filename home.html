@@ -1,0 +1,90 @@
+{% extends 'subject/base.html' %}
+{% load static %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <style>
+
+
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'subject/cs.css' %}">
+        {% block title %}
+            <title>{{ title }}</title>
+        {% endblock %}
+    </head>
+    <div class="container">
+        <br><br><br>
+        <body style="background-color: gold">
+        <div class="section">
+
+
+            <table class="table table-bordered"
+                   style="text-align:center; width:100% ; color: black; background-color: gold">
+                <tr>
+                    <th style="background-color: red; border: 3px solid #73AD21; ">{{ onstate.state }}</th>
+                    <th style="background-color: red; border: 3px solid #73AD21 ">{{ onstate.cases }}</th>
+                    <th style="background-color: red; border: 3px solid #73AD21 ">{{ onstate.confirm }}</th>
+                    <th style="background-color: red; border: 3px solid #73AD21 ">{{ onstate.discharged }}</th>
+                    <th style="background-color: red; border: 3px solid #73AD21 ">{{ onstate.deaths }}</th>
+                </tr>
+
+
+                {% for dict in states %}
+                    {% if dict.state == "Cases being reassigned to states" %}
+
+                    {% else %}
+                        <tr>
+                            <td style="border-left-color: #73AD21">{{ dict.state }}</td>
+                            <td>{{ dict.undefined }}</td>
+                            <td>{{ dict.cases }}</td>
+                            <td>{{ dict.recovered }}</td>
+                            <td style="border-right-color: #73AD21; color: red">{{ dict.deaths }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+
+            <h6 id="time" style="text-align: center"></h6>
+            <script>
+                function printTime() {
+                    var d = new Date();
+                    var year = d.getFullYear()
+                    var months = ['January', 'February', 'march', 'Aprial', 'May', 'June', 'July', 'August', 'september'
+                        , 'October', "November", "December"]
+                    var month = months[d.getMonth()];
+                    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    var dayName = days[d.getDay()];
+                    var tarik = d.getDay()
+                    var day = d.getDay();
+
+                    var h = document.getElementById("time");
+                    h.innerHTML = '                                ' + 'State Data Updated on' + ":"
+                        + dayName + "," + tarik + "," + month + " " + year;
+                }
+
+                printTime()
+
+
+            </script>
+            <h6 style="background-color: blue; color: white; text-align: center">Promoted by Hemraj</h6>
+            <h6>Stay safe and healthy. Please practice hand-washing and social distancing, and check out our
+                resources for adapting to these times.
+
+            </h6>
+            <br><br><br>
+            <br>
+            <h4 style="text-align: center"><i>ADS</i><a href="#" class="fa fa-fire"></a></h4>
+            <h6 style="color: black">“Nobody reads or sees ads. People read what interests them, and sometimes it's
+                an ad.” -Howard Luck Gossage.</h6>
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="elfsight-app-d6540f34-8edf-4fa1-ad6a-b4dd8be2bb0d"></div>
+        </div>
+        </body>
+    </div>
+    </html>
+
+{% endblock %}
